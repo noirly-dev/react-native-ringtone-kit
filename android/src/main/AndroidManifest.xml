@@ -1,0 +1,3 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <!-- Core v1 needs no dangerous permissions (RingtoneManager + system picker). -->
+</manifest>

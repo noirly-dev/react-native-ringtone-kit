@@ -1,0 +1,12 @@
+node_modules/
+lib/
+example/node_modules/
+.DS_Store
+*.log
+coverage/
+android/build/
+android/.gradle/
+ios/build/
+.idea/
+.vscode/
+*.iml

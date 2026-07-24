@@ -1,0 +1,24 @@
+name: iOS Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn bootstrap:example
+      - name: Install pods
+        working-directory: example/ios
+        run: pod install
+      - name: Build example iOS app
+        working-directory: example/ios
+        run: xcodebuild -workspace RingtoneKitExample.xcworkspace -scheme RingtoneKitExample -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' build

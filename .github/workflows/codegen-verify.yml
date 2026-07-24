@@ -1,4 +1,4 @@
-name: Lint and Typecheck
+name: Codegen Verify
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  lint-typecheck:
+  codegen:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,5 +15,5 @@ jobs:
           node-version: 20
           cache: yarn
       - run: yarn install --frozen-lockfile
-      - run: yarn lint
-      - run: yarn typescript
+      - run: yarn bootstrap:example
+      - run: yarn codegen:check

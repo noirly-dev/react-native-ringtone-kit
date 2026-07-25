@@ -25,10 +25,8 @@ Headless sound catalog layer — no picker UI chrome, no system-wide ringtone mu
 - React Native CLI (no Expo)
 - New Architecture enabled
 - React Native 0.76+
-
-| Library | React Native | Android min | iOS min |
-|---------|--------------|-------------|---------|
-| 0.1.x   | 0.76+        | 24          | 15.1    |
+- Android min SDK 24
+- iOS 15.1+
 
 ## Installation
 
@@ -44,9 +42,9 @@ This package is published to [GitHub Packages](https://github.com/noirly-dev/rea
 ### 2. Install
 
 ```bash
-npm install @noirly-dev/react-native-ringtone-kit
+npm install @noirly-dev/react-native-ringtone-kit@latest
 # or
-yarn add @noirly-dev/react-native-ringtone-kit
+yarn add @noirly-dev/react-native-ringtone-kit@latest
 ```
 
 Autolinking handles native setup. Run `pod install` in your iOS project after installing.

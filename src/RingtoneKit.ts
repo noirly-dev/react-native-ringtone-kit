@@ -139,6 +139,15 @@ class RingtoneKitImpl {
       return cached.uri;
     }
 
+    // Allow direct preview when the id is already a resolvable URI.
+    if (
+      soundId.startsWith('content://') ||
+      soundId.startsWith('file://') ||
+      soundId.startsWith('/')
+    ) {
+      return soundId;
+    }
+
     const namespaced = parseNamespacedSoundId(soundId);
     if (namespaced != null) {
       const provider = getProvider(namespaced.providerId);
